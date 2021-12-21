@@ -10,7 +10,7 @@ if [ "`uname`" = "Darwin" ] && [ -e "/opt/local/bin/gfortran-mp-4.9" ]
 then
   fcstr="-DCMAKE_Fortran_COMPILER=/opt/local/bin/gfortran-mp-4.9"
 fi
-cmake -D BLAS_goto2_LIBRARY=$PWD/../libopenblas.a $fcstr ../arpack-ng
+cmake -D BUILD_SHARED_LIBS=off BLAS_goto2_LIBRARY=$PWD/../libopenblas.a $fcstr ../arpack-ng
 make
 cd ../
 ln -s arpack-ng-build/libarpack.a ./
