@@ -669,11 +669,13 @@ std::string ARrcStdEig<ARFLOAT, ARTYPE>::CheckWhich(const std::string& whichp)
     case 'R':
     case 'I':
       return whichp;
+    default :
+      throw ArpackError(ArpackError::WHICH_UNDEFINED);
     }
   default :
     throw ArpackError(ArpackError::WHICH_UNDEFINED);
   }
-
+  return whichp;
 } // CheckWhich.
 
 
