@@ -100,12 +100,6 @@ typedef enum {
 #define USER_ABORT(msg) superlu_abort_and_exit(msg)
 #endif
 
-#define ABORT(err_msg) \
- { char msg[256];\
-   sprintf(msg,"%s at line %d in file %s\n",err_msg,__LINE__, __FILE__);\
-   USER_ABORT(msg); }
-
-
 #ifndef USER_MALLOC
 #if 1
 #define USER_MALLOC(size) superlu_malloc(size)
