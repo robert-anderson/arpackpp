@@ -200,11 +200,13 @@ std::string ARrcSymStdEig<ARFLOAT>::CheckWhich(const std::string& whichp)
     case 'A':
     case 'M':
       return whichp;
+    default:
+      throw ArpackError(ArpackError::WHICH_UNDEFINED);
     }
   default:
     throw ArpackError(ArpackError::WHICH_UNDEFINED);
   }
-
+  return whichp;
 } // CheckWhich.
 
 
